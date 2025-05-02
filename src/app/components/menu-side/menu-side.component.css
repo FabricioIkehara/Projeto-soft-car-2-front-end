@@ -1,0 +1,83 @@
+
+.menu-side-container {
+  width: 310px;
+  height: 100%;
+  background-color: #2A2F67; /* Cor de fundo azul escuro */
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Sombra para dar efeito de profundidade */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Menu superior */
+.menu-itens {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos de cada item */
+.menu-itens li {
+  position: relative;
+  margin-bottom: 20px; /* Espaçamento entre os itens */
+}
+
+.menu-itens a {
+  text-decoration: none;
+  color: #FFFFFF; /* Cor amarela dos textos */
+  font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+  font-size: 18px; /* Tamanho da fonte */
+  padding: 15px;
+  display: flex;
+  align-items: center; /* Centraliza ícone e texto verticalmente */
+  transition: background-color 0.3s ease;
+  border-radius: 8px; /* Borda arredondada */
+}
+
+.menu-itens a:hover {
+  background-color: #404080; /* Cor de fundo ao passar o mouse */
+  color: #FFC43D;
+}
+
+.menu-itens i, .menu-itens .material-icons {
+  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+  font-size: 22px; /* Tamanho do ícone */
+}
+
+/* Dropdown para submenus */
+.submenu {
+  display: none; /* Escondido por padrão */
+  list-style-type: none;
+  padding-left: 30px; /* Indenta o submenu */
+  background-color: #2A2F67;
+}
+
+.menu-itens li:hover > .submenu {
+  display: block; /* Exibe o submenu ao passar o mouse */
+}
+
+/* Estilos para os itens do submenu */
+.submenu li a {
+  font-size: 16px; /* Tamanho de fonte menor para o submenu */
+  color: #FFFFFF; /* Cor branca para os itens do submenu */
+  padding: 10px 0;
+}
+
+.submenu li a:hover {
+  background-color: #404080;
+  color: #FFC43D;
+}
+
+
+.menu-itens .fas, .menu-itens .material-icons {
+  color: #FFFFFF
+}
+
+/* Rodapé do menu lateral */
+.menu-side-container .footer-menu {
+  padding: 20px;
+  color: #FFC43D;
+  font-size: 14px;
+  background-color: #2A2F67;
+}

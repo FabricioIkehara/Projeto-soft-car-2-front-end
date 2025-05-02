@@ -1,0 +1,18 @@
+<div class="client-card-container" *ngIf="client">
+  <div class="client-card-icon">
+    <img src="/assets/user.png" alt="Ícone do Cliente" />
+  </div>
+
+  <div class="client-card">
+    <h3>{{ client.client }}</h3>
+    <p>Telefone: {{ client.telefone }}</p>
+  </div>
+
+  <div class="clients-card-view">
+    <p>Visualizar pedido</p>
+  </div>
+</div>
+
+<div *ngIf="!client" class="client-card-container">
+  <p>Cliente não encontrado</p>
+</div>

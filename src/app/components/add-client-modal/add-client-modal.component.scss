@@ -1,0 +1,71 @@
+.dialog-container{
+  height: 600px;
+  width: 900px;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.dialog-title {
+  margin-bottom: 10px;
+  margin-top: 30px;
+
+}
+
+.dialog-title h2{
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #2A2F67;
+}
+
+.dialog-name{
+  font-family: Poppins;
+  color: #505050;
+  font-weight: 500;
+}
+
+.dialog-name p{
+  margin-left: 30px;
+}
+
+.dialog-car-stats{
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.dialog-btn button{
+  padding: 10px 20px;
+  border: 1px border;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 240px;
+  margin-left: 150px;
+
+}
+
+.btn-confirm{
+
+  background-color: #2A2F67;
+  color: white;
+}
+
+.btn-cancel{
+  background-color: white;
+  color: #2A2F67;
+
+
+
+}

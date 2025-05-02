@@ -1,0 +1,43 @@
+<div class="dialog-container">
+  <div class="dialog-title">
+    <h2>icone seta* Adicionar Cliente</h2>
+  </div>
+
+  <div class="dialog-name">
+    <div>
+      <h2>Nome*</h2>
+      <p>{{ data.nome }}</p> <!-- Altere client para nome -->
+    </div>
+    <div class="dialog-telefone">
+      <h2>Telefone Com DDD*</h2>
+      <p>{{ data.telefone }}</p>
+    </div>
+    <div class="dialog-car-stats">
+      <div>
+        <h2>Carro:</h2>
+        <p>{{ data.carro }}</p>
+      </div>
+      <div>
+        <h2>Cor:</h2>
+        <p>{{ data.cor }}</p>
+      </div>
+      <div>
+        <h2>Placa:</h2>
+        <p>{{ data.placa }}</p>
+      </div>
+      <div>
+        <h2>Email:</h2>
+        <p>{{ data.email }}</p>
+      </div>
+    </div>
+    <div class="dialog-obs">
+      <h2>Observação*</h2>
+      <p>{{ data.observacao || 'Nenhuma' }}</p>
+    </div>
+  </div>
+
+  <div class="dialog-btn">
+    <button class="btn-cancel" (click)="cancel()">Cancelar</button>
+    <button class="btn-confirm" (click)="confirm()">Confirmar</button>
+  </div>
+</div>

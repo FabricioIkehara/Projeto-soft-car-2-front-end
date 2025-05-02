@@ -1,0 +1,67 @@
+.client-card-container {
+  width: 306px; /* Largura do card */
+  height: 250px; /* Altura do card */
+  border-radius: 8px; /* Bordas arredondadas */
+  border: 1px solid #ccc; /* Borda leve para o card */
+  background-color: #f9f9f9; /* Cor de fundo do card */
+  padding: 8px; /* Espaçamento interno */
+  display: flex; /* Para organizar os itens dentro do card */
+  flex-direction: column; /* Itens em coluna */
+  justify-content: space-between; /* Distribui espaço entre os itens */
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column; /* Para colocar o menu-bar em cima */
+  height: 100%; /* Ocupa toda a altura da página */
+}
+
+
+
+.small-card-icon {
+  font-size: 24px; /* Tamanho do ícone */
+  color: #333; /* Cor do ícone */
+  margin-bottom: 10px; /* Espaço abaixo do ícone */
+}
+
+
+.clients-card-contact {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 11.55px;
+  text-align: left;
+
+}
+
+.stat-item {
+  text-align: left;
+  flex: 1;
+  font-weight: bold;
+}
+
+.stat-title {
+  margin: 0;
+  font-weight: lighter;
+}
+
+.stat-value {
+  margin: 5px 0 0;
+}
+
+.small-card-view {
+  cursor: pointer;
+  color: blue;
+  text-align: left;
+  text-decoration: underline;
+}
+
+
+.client-card-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover; /* Ajusta o tamanho da imagem */
+}

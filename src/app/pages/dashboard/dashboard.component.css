@@ -1,0 +1,115 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Poppins;
+  background-color: #f4f4f4;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content-container {
+  display: flex;
+  flex: 1;
+}
+
+
+.dashboard-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.dashboard-container > .card-container { /* Aplica o grid apenas ao container dos cards */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+app-small-card:hover {
+  transform: scale(1.05);
+}
+
+app-small-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+app-small-card a {
+  color: #2b3674;
+  text-decoration: none;
+}
+
+app-small-card a:hover {
+  text-decoration: underline;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px; /* Adicionada margem de 30px acima */
+  gap: 10px;
+}
+
+.pagination-controls button {
+  padding: 8px 15px;
+  border: none; /* Removendo a borda padrão */
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Poppins; /* Usando a mesma fonte */
+  font-size: 14px;
+  background-color: #2b3674; /* Cor de fundo azulada */
+  color: white; /* Texto branco */
+  transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.pagination-controls button:hover {
+  background-color: #1e2755; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #cccccc; /* Cor de fundo cinza para desabilitado */
+  color: #666666; /* Cor do texto cinza para desabilitado */
+}
+
+.pagination-controls span {
+  font-size: 14px;
+  color: #333; /* Cor do texto para a informação da página */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+
+  app-menu-side {
+    width: 100%;
+    height: auto;
+  }
+
+  .dashboard-container > .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container > .card-container {
+    grid-template-columns: 1fr;
+  }
+}

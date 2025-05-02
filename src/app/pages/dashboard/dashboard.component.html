@@ -1,0 +1,24 @@
+<div class="main-container">
+  <app-menu-bar></app-menu-bar>
+  <div class="content-container">
+    <app-menu-side></app-menu-side>
+    <div class="dashboard-container">
+      <div class="dashboard-title">
+        <p>Pedidos em andamento</p>
+      </div>
+      <div class="card-container">
+        <app-small-card
+          *ngFor="let order of orders"
+          [order]="order"
+          [titulo]="order.servicosValidos">
+        </app-small-card>
+      </div>
+
+      <div class="pagination-controls">
+        <button (click)="previousPage()" [disabled]="!hasPreviousPage">Página Anterior</button>
+        <span>Página {{ currentPage }} de {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="!hasNextPage">Próxima Página</button>
+      </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+.main-container {
+  display: flex;
+  flex-direction: column; /* Para colocar o menu-bar em cima */
+  height: 100%; /* Ocupa toda a altura da página */
+}
+
+
+
+.content-container {
+  display: flex; /* Para alinhar o menu lateral e o dashboard em linha */
+  flex: 1; /* Ocupar o espaço restante */
+}
+
+
+.clients-container {
+  flex: 1; /* O dashboard ocupará o espaço restante */
+  padding: 20px; /* Espaçamento interno */
+  background-color: #ffffff; /* Cor de fundo para visualização */
+  border-radius: 8px;
+  margin: 20px; /* Margem ao redor do dashboard */
+}
+
+.clients-title {
+  font-size: 24px; /* Tamanho do título */
+  font-weight: bold; /* Negrito no título */
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.clients-container > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+  grid-gap: 15px; /* Espaçamento de 15px entre os cards */
+}
+
+
+
+app-clients-card:hover {
+  transform: scale(1.05); /* Efeito de "zoom" ao passar o mouse */
+}
+
+app-clients-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+app-clients-card a {
+  color: #2b3674; /* Cor do link */
+  text-decoration: none;
+}
+
+app-clients-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column; /* Empilhar menu e dashboard em telas pequenas */
+  }
+
+  app-menu-side {
+    width: 100%; /* Menu lateral ocupará 100% da largura */
+    height: auto; /* Altura ajustável */
+  }
+
+  .dashboard-container > div {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em vez de 3 */
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container > div {
+    grid-template-columns: 1fr; /* Apenas 1 coluna em telas muito pequenas */
+  }
+}

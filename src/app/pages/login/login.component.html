@@ -1,0 +1,36 @@
+<div class="login-container">
+  <div class="login-logo">
+    <img src="assets/softcar2.png" alt="soft-car-logo">
+    <h3>
+      <p>Bem-vindos ao SOFT CAR!</p>
+      <p>Com o SOFT CAR, você conseguirá cadastrar clientes, organizar seus orçamentos e ordem de serviço.</p>
+    </h3>
+  </div>
+
+  <div class="form-container">
+    <form class="form-content" (ngSubmit)="login()">
+      <img src="assets/softcar2.png" alt="soft-car-logo">
+      <h2>Bem-vindo(a)!</h2>
+      <h4>Por favor, insira seu email e senha.</h4>
+
+      <label for="email">E-mail:</label>
+      <div class="input-container">
+        <i class="fas fa-envelope"></i>
+        <input id="email" type="email" [(ngModel)]="email" name="email" placeholder="email@email.com" required>
+      </div>
+
+      <label for="password">Senha:</label>
+      <div class="input-container">
+        <i class="fas fa-lock"></i>
+        <input id="password" type="password" [(ngModel)]="senha" name="password" placeholder="Insira sua senha" required>
+      </div>
+
+      <div class="login-options">
+        <h4><a href="#">Lembrar de mim</a></h4>
+        <h4><a href="#">Esqueceu sua senha?</a></h4>
+      </div>
+
+      <button class="btn-login" type="submit">Entrar</button>
+    </form>
+  </div>
+</div>

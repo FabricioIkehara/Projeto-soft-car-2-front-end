@@ -1,0 +1,31 @@
+<div class="modal-container">
+  <div class="modal-title">
+    <h2><i class="fas fa-arrow-left"></i> Confirmar Pedido</h2>
+  </div>
+
+  <div class="modal-data">
+    <h3>Serviços</h3>
+    <ul>
+      <li *ngFor="let servico of data.servicos">
+        {{ servico.descricao }} - Quantidade: {{ servico.quantidade }} -
+        Valor Unitário: R$ {{ servico.total }} - Subtotal:
+        R$ {{ servico.quantidade * servico.total }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="modal-total">
+    <h3>Email</h3>
+    <p>{{ data.email }}</p>
+  </div>
+
+  <div class="modal-total">
+    <h3>Valor Total:</h3>
+    <p>R$ {{ data.valorTotal }}</p>
+  </div>
+
+  <div class="modal-actions">
+    <button class="btn-cancel" (click)="onCancel()">Cancelar</button>
+    <button class="btn-confirm" mat-button (click)="onSave()">Confirmar</button>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="main-container">
+  <app-menu-bar></app-menu-bar>
+
+  <div class="content-container">
+    <app-menu-side></app-menu-side>
+
+    <div class="form-container">
+      <h2>Adicionar Cliente</h2>
+
+      <form #clientForm="ngForm">
+        <div class="form-group">
+          <label for="client">NOME*</label>
+          <input
+            type="text"
+            id="client"
+            name="client"
+            ngModel
+            placeholder="Nome"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">TELEFONE (COM DDD)*</label>
+          <input
+            type="text"
+            id="telefone"
+            name="telefone"
+            ngModel
+            placeholder="(xx) XXXXX-XXXX"
+            required
+          />
+        </div>
+
+        <div class="form-group car-info">
+          <div class="car-item">
+            <label for="carro">Carro</label>
+            <input
+              type="text"
+              id="carro"
+              name="carro"
+              ngModel
+              placeholder="Carro"
+              required
+            />
+          </div>
+
+          <div class="car-item">
+            <label for="cor">Cor</label>
+            <input
+              type="text"
+              id="cor"
+              name="cor"
+              ngModel
+              placeholder="Cor"
+              required
+            />
+          </div>
+
+          <div class="car-item">
+            <label for="placa">Placa</label>
+            <input
+              type="text"
+              id="placa"
+              name="placa"
+              ngModel
+              placeholder="Placa"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="placa">E-mail</label>
+            <input
+              type="text"
+              id="placa"
+              name="placa"
+              ngModel
+              placeholder="@E-mail"
+              required
+            />
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="observacao">OBSERVAÇÃO</label>
+          <textarea
+            id="observacao"
+            name="observacao"
+            ngModel
+            placeholder="Observação"
+          ></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <button
+            type="button"
+            class="cancel-btn"
+            (click)="resetForm(clientForm)"
+          >
+            CANCELAR
+          </button>
+          <button
+            type="button"
+            class="add-btn"
+            [disabled]="!clientForm.form.valid"
+            (click)="openAddClientModal(clientForm)"
+          >
+            ADICIONAR
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

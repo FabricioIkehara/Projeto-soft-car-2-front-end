@@ -1,0 +1,17 @@
+<div class="main-container">
+  <app-menu-bar></app-menu-bar>
+  <div class="content-container">
+    <app-menu-side></app-menu-side>
+    <div class="clients-container">
+      <div class="clients-title">
+        <p>Clientes Cadastrados</p>
+      </div>
+      <div class="clients-cards">
+        <app-clients-card
+          *ngFor="let client of clients"
+          [client]="client"
+        ></app-clients-card>
+      </div>
+    </div>
+  </div>
+</div>

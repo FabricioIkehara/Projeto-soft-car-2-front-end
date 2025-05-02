@@ -1,0 +1,86 @@
+.small-card {
+  width: 306px; /* Largura do card */
+  height: 250px; /* Altura do card */
+  border-radius: 8px; /* Bordas arredondadas */
+  border: 1px solid #ccc; /* Borda leve para o card */
+  background-color: #f9f9f9; /* Cor de fundo do card */
+  padding: 8px; /* Espaçamento interno */
+  display: flex; /* Para organizar os itens dentro do card */
+  flex-direction: column; /* Itens em coluna */
+  justify-content: space-between; /* Distribui espaço entre os itens */
+}
+
+.small-card * {
+  border: none;
+}
+
+.small-card:focus {
+  outline: none;
+}
+
+.small-card > * {
+  margin-bottom: 4px;
+
+}
+
+.small-card > *:last-child {
+  margin-bottom: 0;
+}
+
+.small-card-icon {
+  font-size: 24px; /* Tamanho do ícone */
+  color: #333; /* Cor do ícone */
+  margin-bottom: 10px; /* Espaço abaixo do ícone */
+}
+
+.small-card-title {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23.1px;
+  text-align: left;
+
+}
+
+.small-card-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 11.55px;
+  text-align: left;
+
+}
+
+.stat-item {
+  text-align: left;
+  flex: 1;
+  font-weight: bold;
+}
+
+.stat-title {
+  margin: 0;
+  font-weight: lighter;
+}
+
+.stat-value {
+  margin: 5px 0 0; /* Espaçamento acima do valor */
+}
+
+.small-card-view {
+  cursor: pointer;
+  color: blue;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.small-card-icon img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}

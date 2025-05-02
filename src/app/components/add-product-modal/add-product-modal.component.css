@@ -1,0 +1,95 @@
+.modal-container {
+  background-color: #ffffff;
+  width: 900px;
+  height: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.modal-title {
+  margin-bottom: 10px;
+  margin-top: 30px;
+
+}
+
+.modal-title h2{
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #2A2F67;
+  margin-left: 20px;
+}
+
+.modal-data{
+  margin-top: 30px;
+}
+
+.modal-data h3{
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #505050;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal-under-data{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-right: 70px;
+  margin-left: 0;
+  margin-top: 30px;
+}
+
+.modal-under-data h2{
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #505050;
+
+}
+
+
+.modal-actions button{
+  padding: 10px 20px;
+  border: 1px border;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 240px;
+  margin-left: 70px;
+
+}
+
+.btn-confirm{
+
+  background-color: #2A2F67;
+  color: white;
+}
+
+.btn-cancel{
+  background-color: white;
+  color: #2A2F67;
+
+
+
+}

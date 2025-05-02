@@ -1,0 +1,29 @@
+<!-- small-card.component.html -->
+<div class="small-card" [attr.id]="'card-' + order.id">
+  <div class="small-card-icon">
+    <img src="/assets/gear.png" alt="Ícone de Configurações" />
+  </div>
+  <div class="small-card-title">
+    <p>{{ order.servicos[0]?.descricao || 'Nenhum serviço disponível' }}</p>
+  </div>
+  <div class="small-card-stats">
+    <div class="stat-item">
+      <p class="stat-title">Cliente:</p>
+      <p class="stat-value">{{ order.client }}</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-title">Carro:</p>
+      <p class="stat-value">{{ order.carro }}</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-title">Status:</p>
+      <p class="stat-value">Em andamento</p>
+    </div>  
+  </div>
+  <div class="small-email">
+    <p>{{ order.email }}</p>
+  </div>
+  <div class="small-card-view">
+    <a href="#" class="view-order-link">Visualizar pedido</a>
+  </div>
+</div>

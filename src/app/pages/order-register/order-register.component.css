@@ -1,0 +1,174 @@
+
+.content-container {
+  display: flex;
+}
+
+/* O conteúdo da página (formulário e a seção de adicionar serviços) */
+.page-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 0px; /* Ajuste esse valor conforme necessário */
+  box-sizing: border-box;
+  background-color: #f1f1f1; /* Fundo para o conteúdo principal */
+  min-height: 100vh; /* Garante que o conteúdo principal ocupe a tela inteira verticalmente */
+}
+
+/* Centralizando o formulário */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto; /* Centraliza o form horizontalmente */
+  padding: 20px;
+  background-color: #fff; /* Para destaque */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-group {
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.car-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.car-info input {
+  padding: 10px;
+  width: 200px;
+}
+
+
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn,
+.add-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+}
+
+.add-btn {
+  background-color: #2A2F67;
+  color: white;
+  font: Montserrat ;
+}
+
+.add-service-container {
+  margin: 20px 0; /* Ajuste para controlar o espaçamento acima e abaixo da seção */
+}
+
+.add-service-title {
+  display: flex;
+  justify-content: space-between; /* Alinha o título à esquerda e o botão à direita */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 10px 0;
+  width: 100%; /* Certifique-se de que a largura ocupe todo o espaço */
+}
+
+.add-service {
+  padding: 10px 20px;
+  background-color: #2A2F67;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.add-service i {
+  margin-right: 5px;
+}
+
+.add-service-body {
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.add-service-body{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.add-service-body {
+  margin-top: 20px;
+}
+
+.add-service-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.add-service-body th {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: #2A2F67;
+  padding: 12px 0;
+  background-color: #2A2F6733;
+}
+
+.add-service-body th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.add-service-body th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.add-service-body td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Adicionando o border-radius apenas na linha de dados */
+.add-service-body tr td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.add-service-body tr td:last-child {
+  border-bottom-right-radius: 8px;
+}

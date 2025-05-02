@@ -1,0 +1,134 @@
+<div class="main-container">
+  <app-menu-bar></app-menu-bar>
+  <div class="content-container">
+    <app-menu-side></app-menu-side>
+
+    <div class="page-content">
+      <div class="form-container">
+        <h2><i class="fas fa-arrow-left"></i> Adicionar pedido</h2>
+
+        <form (ngSubmit)="onSubmit()" #form="ngForm">
+          <div class="form-group">
+            <label for="name">Cliente</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="formData.client"
+              placeholder="Nome"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">TELEFONE (COM DDD)</label>
+            <input
+              type="text"
+              id="phone"
+              name="telefone"
+              [(ngModel)]="formData.telefone"
+              placeholder="(xx) XXXXX-XXXX"
+              required
+            />
+          </div>
+
+          <div class="form-group car-info">
+            <label for="car">Carro*</label>
+            <label for="color">Cor*</label>
+            <label for="plate">Placa*</label>
+            <input
+              type="text"
+              id="car"
+              name="carro"
+              [(ngModel)]="formData.carro"
+              placeholder="Carro"
+              required
+            />
+            <input
+              type="text"
+              id="color"
+              name="cor"
+              [(ngModel)]="formData.cor"
+              placeholder="Cor"
+              required
+            />
+            <input
+              type="text"
+              id="plate"
+              name="placa"
+              [(ngModel)]="formData.placa"
+              placeholder="Placa"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              [(ngModel)]="this.formData.email"
+              placeholder="@E-mal"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="observation">OBSERVAÇÃO</label>
+            <textarea
+              id="observation"
+              name="observacoes"
+              [(ngModel)]="formData.observacoes"
+              placeholder="Observação"
+            ></textarea>
+          </div>
+        </form>
+
+        <div class="add-service-container">
+          <div class="add-service-title">
+            <h2>Adicionar serviços</h2>
+            <button (click)="limparTabela()">Limpar Tabela</button>
+            <button class="add-btn" (click)="adicionarServico()">
+              <i class="fas fa-plus"></i> Adicionar Serviço
+            </button>
+          </div>
+
+          <div class="add-service-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>quantidade</th>
+                  <th>Descrição dos serviços</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let servico of servicos; let i = index">
+                  <td>
+                    <input type="number" [(ngModel)]="servico.quantidade" placeholder="0" />
+                  </td>
+                  <td>
+                    <input type="text" [(ngModel)]="servico.descricao" placeholder="Descrição" />
+                  </td>
+                  <td>
+                    <input
+                         type="text"
+                         [(ngModel)]="servico.total"
+                         (input)="formatarValorMonetario(i)"
+                         placeholder="R$ 0,00"
+  />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <button class="add-btn" (click)="onSubmit()">
+          <i class="fas fa-plus"></i> Enviar Pedido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
