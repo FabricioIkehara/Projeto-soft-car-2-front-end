@@ -1,26 +1,21 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
-interface Order {
-servicos: any;
-  id: number;
-  client: string;
-  telefone: string;
-  carro: string;
-  email: string;
-  status: string;
-}
+import { Order } from '../../models/order.model'; // Importe a interface Order
 
 @Component({
   selector: 'app-small-card',
   templateUrl: './small-card.component.html',
   styleUrls: ['./small-card.component.css'],
   imports: [CommonModule],
-  standalone: true
+  standalone: true,
 })
 export class SmallCardComponent {
   @Input() order!: Order;
   @Input() titulo: string | undefined;
-servico: any;
+  @Output() cardClicked: EventEmitter<Order> = new EventEmitter<Order>();
+
+  onCardClick() {
+    this.cardClicked.emit(this.order);
+    console.log('Card clicado', this.order);
+  }
 }

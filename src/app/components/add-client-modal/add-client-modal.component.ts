@@ -23,15 +23,16 @@ export class AddClientModalComponent {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     const orderData = {
-      client: this.data.client, // Agora data deve estar definido
+      client: this.data.client,
       telefone: this.data.telefone,
       carro: this.data.carro,
       cor: this.data.cor,
       placa: this.data.placa,
-      observacao: this.data.observacao,
       email: this.data.email,
-      servicos: this.data.servicos,
-      valorTotal: this.data.valorTotal,
+      observacao: this.data.observacao,
+      
+    
+      
     };
 
     console.log('Dados enviados:', orderData);

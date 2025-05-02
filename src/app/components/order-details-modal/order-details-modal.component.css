@@ -1,0 +1,93 @@
+.custom-order-details-modal {
+  background-color: #ffffff !important;
+  width: 900px !important;
+  height: 400px !important;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  padding: 20px !important;
+  overflow: hidden !important;
+  z-index: 1001 !important;
+}
+
+/* Estilos para o título do modal */
+.modal-title {
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.modal-title h2 {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #2A2F67;
+  margin-left: 20px;
+}
+
+/* Estilos para a seção de dados do modal */
+.modal-data {
+  margin-top: 30px;
+}
+
+.modal-data h3 {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #505050;
+}
+
+/* Estilos para a seção de total do modal */
+.modal-total {
+  margin-top: 20px;
+}
+
+.modal-total h3 {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #505050;
+}
+
+.modal-total p {
+  margin-left: 20px;
+  color: #505050;
+}
+
+/* Estilos para as ações do modal (botões) */
+.modal-actions {
+  margin-top: 20px;
+  display: flex !important;
+  justify-content: flex-end !important; /* Alinhei os botões à direita como no exemplo */
+  gap: 20px; /* Adicionei um espaçamento entre os botões */
+  padding-right: 20px; /* Adicionei um padding à direita */
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 25px;
+  width: auto; /* Ajusta a largura automaticamente ao conteúdo */
+}
+
+.modal-actions .btn-cancel {
+  background-color: white;
+  color: #2A2F67;
+}
+
+.modal-actions .btn-confirm {
+  background-color: #2A2F67;
+  color: white;
+}

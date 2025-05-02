@@ -5,6 +5,7 @@ import { MenuBarComponent } from '../../components/menu-bar/menu-bar.component';
 import { MenuSideComponent } from '../../components/menu-side/menu-side.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
 
 @Component({
   selector: 'app-clients-register',
@@ -25,11 +26,12 @@ export class ClientsRegisterComponent {
   openAddClientModal(form: NgForm): void {
     if (form.valid) {
       const clientData = {
-        client: form.value.client, // Este é o nome que você usa na sua interface
+        client: form.value.client, 
         telefone: form.value.telefone,
         carro: form.value.carro,
         cor: form.value.cor,
         placa: form.value.placa,
+        email: form.value.email,
         observacao: form.value.observacao,
       };
 

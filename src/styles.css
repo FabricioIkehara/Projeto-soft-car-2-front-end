@@ -1,14 +1,129 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.cdk-overlay-pane {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 1000 !important;
+}
+
+.cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  pointer-events: all !important;
+}
 
 
-::ng-deep .mat-dialog-container {
-  width: 150px;
-  height: auto;
-  border-radius: 10px;
+
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1 !important;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-hiding {
+  opacity: 0 !important;
+}
+
+/* Estilos para o container do diálogo (aplicados globalmente) */
+.mat-dialog-container {
+  background-color: #ffffff;
+  width: 900px !important; /* Use !important para garantir a aplicação */
+  height: 400px !important; /* Use !important para garantir a aplicação */
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  overflow: hidden;
+  z-index: 1001 !important;
+}
+
+/* Estilos para o título do modal (aplicados globalmente) */
+.mat-dialog-title {
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.mat-dialog-title h2 {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #2A2F67;
+  margin-left: 20px;
+}
+
+/* Estilos para a seção de dados (aplicados globalmente) */
+.modal-data {
+  margin-top: 30px;
+}
+
+.modal-data h3 {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #505050;
+}
+
+/* Estilos para as ações do modal (aplicados globalmente) */
+.mat-dialog-actions {
+  margin-top: 20px;
+  display: flex !important; /* Força o display flex */
+  justify-content: space-evenly !important; /* Força o alinhamento */
+}
+
+/* Estilos para a seção de dados inferior (aplicados globalmente) */
+.modal-under-data {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-right: 70px;
+  margin-left: 0;
+  margin-top: 30px;
+}
+
+.modal-under-data h2 {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #505050;
+}
+
+/* Estilos para os botões (aplicados globalmente) */
+.mat-dialog-actions button {
+  padding: 10px 20px;
+  border: 1px solid; /* Adicionei 'solid' para a borda aparecer */
+  cursor: pointer;
+  border-radius: 25px;
+  width: 240px;
+  margin-left: 70px;
+}
+
+/* Estilos para o botão de confirmação (aplicados globalmente) */
+.mat-dialog-actions .btn-confirm { /* Use o nome da classe diretamente no contexto do actions */
+  background-color: #2A2F67;
+  color: white;
+}
+
+/* Estilos para o botão de cancelar (aplicados globalmente) */
+.mat-dialog-actions .btn-cancel { /* Use o nome da classe diretamente no contexto do actions */
+  background-color: white;
+  color: #2A2F67;
 }
