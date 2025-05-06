@@ -20,6 +20,10 @@ interface Client {
 })
 export class ClientsComponent implements OnInit {
   clients: Client[] = [];
+  paginatedClients: Client[] = [];
+  currentPage: number = 1;
+  itemsPerPage: number = 6;
+  totalPages: number = 0;
   private readonly apiUrl: string = 'http://127.0.0.1:8000/clients/';
 
   constructor(private http: HttpClient) {}
@@ -36,8 +40,37 @@ export class ClientsComponent implements OnInit {
   }
 
   private handleClientData(data: Client[]): void {
-    this.clients = data;
-    console.log('Clientes carregados:', this.clients);
+    this.clients = data.sort((a, b) => a.client.localeCompare(b.client)); // ordena
+    this.totalPages = Math.ceil(this.clients.length / this.itemsPerPage);
+    this.updatePaginatedClients();
+  }
+
+  private updatePaginatedClients(): void {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.paginatedClients = this.clients.slice(startIndex, endIndex);
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.updatePaginatedClients();
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePaginatedClients();
+    }
+  }
+
+  isFirstPage(): boolean {
+    return this.currentPage === 1;
+  }
+
+  isLastPage(): boolean {
+    return this.currentPage === this.totalPages;
   }
 
   private handleError(error: any): void {

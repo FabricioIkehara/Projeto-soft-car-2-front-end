@@ -73,3 +73,39 @@ app-clients-card a:hover {
     grid-template-columns: 1fr; /* Apenas 1 coluna em telas muito pequenas */
   }
 }
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px; /* Adicionada margem de 30px acima */
+  gap: 10px;
+}
+
+.pagination-controls button {
+  padding: 8px 15px;
+  border: none; /* Removendo a borda padrão */
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Poppins; /* Usando a mesma fonte */
+  font-size: 14px;
+  background-color: #2b3674; /* Cor de fundo azulada */
+  color: white; /* Texto branco */
+  transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.pagination-controls button:hover {
+  background-color: #1e2755; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #cccccc; /* Cor de fundo cinza para desabilitado */
+  color: #666666; /* Cor do texto cinza para desabilitado */
+}
+
+.pagination-controls span {
+  font-size: 14px;
+  color: #333; /* Cor do texto para a informação da página */
+}

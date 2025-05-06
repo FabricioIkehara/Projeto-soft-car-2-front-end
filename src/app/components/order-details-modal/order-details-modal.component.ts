@@ -1,9 +1,8 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Order } from '../../models/order.model';
 import { Subject, takeUntil } from 'rxjs';
-// Importe os módulos necessários para standalone
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -12,18 +11,17 @@ import { CommonModule } from '@angular/common';
   selector: 'app-order-details-modal',
   templateUrl: './order-details-modal.component.html',
   styleUrls: ['./order-details-modal.component.css'],
-  standalone: true, // Declare o componente como standalone
-  imports: [
-    MatDialogModule,
-    HttpClientModule,
-    CommonModule, // Importe CommonModule para usar diretivas como *ngIf
-  ], // Importe os módulos necessários
+  standalone: true,
+  imports: [MatDialogModule, HttpClientModule, CommonModule],
 })
 export class OrderDetailsModalComponent implements OnInit, OnDestroy {
   order: Order;
   emailEnviado: boolean = false;
+  enviando: boolean = false;
+  erroEnvio: string = '';
   private destroy$ = new Subject<void>();
-  apiUrl: string = 'http://seu-dominio.com.br/api';
+  private brevoApiUrl = 'https://api.brevo.com/v3/smtp/email';
+  private brevoApiKey = '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';
 
   constructor(
     public dialogRef: MatDialogRef<OrderDetailsModalComponent>,
@@ -35,6 +33,8 @@ export class OrderDetailsModalComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.emailEnviado = false;
+    this.erroEnvio = '';
+    console.log('Order:', this.order);
   }
 
   ngOnDestroy(): void {
@@ -46,26 +46,44 @@ export class OrderDetailsModalComponent implements OnInit, OnDestroy {
     this.dialogRef.close();
   }
 
-  enviarEmailConfirmacao(): void {
-    if (this.order && this.order.id) {
-      const apiUrl = `${this.apiUrl}/orders/${this.order.id}/enviar-email/`;
-
-      this.http.post(apiUrl, {})
-        .pipe(takeUntil(this.destroy$))
-        .subscribe(
-          (response: any) => {
-            console.log('Email enviado com sucesso:', response);
-            this.emailEnviado = true;
-            this.dialogRef.close({ emailEnviado: true, orderId: this.order.id });
-          },
-          (error: HttpErrorResponse) => {
-            console.error('Erro ao enviar email:', error);
-            alert('Ocorreu um erro ao enviar o email. Por favor, tente novamente.');
-          }
-        );
-    } else {
-      console.error('ID do pedido inválido.');
-      alert('ID do pedido inválido.');
+  enviarEmail(): void {
+    if (!this.order || !this.order.email) {
+      this.erroEnvio = 'E-mail do cliente não encontrado.';
+      return;
     }
+
+    this.enviando = true;
+    this.emailEnviado = false;
+    this.erroEnvio = '';
+
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'api-key': this.brevoApiKey,
+      'content-type': 'application/json',
+    });
+
+    const payload = {
+      sender: { name: 'SoftCar', email: 'softcar.projeto@gmail.com' }, 
+      to: [{ email: this.order.email }],
+      subject: 'Seu pedido está pronto!',
+      htmlContent: `<h3>Olá, ${this.order.client}!</h3><p>Seu pedido #${this.order.id} está pronto para retirada!</p>`,
+    };
+
+    this.http
+      .post(this.brevoApiUrl, payload, { headers })
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(
+        (response: any) => {
+          console.log('E-mail enviado com sucesso:', response);
+          this.emailEnviado = true;
+          this.enviando = false;
+          this.dialogRef.close({ emailEnviado: true, orderId: this.order.id });
+        },
+        (error: HttpErrorResponse) => {
+          console.error('Erro ao enviar e-mail:', error);
+          this.enviando = false;
+          this.erroEnvio = error.error?.message || 'Erro ao enviar o e-mail. Tente novamente.';
+        }
+      );
   }
 }

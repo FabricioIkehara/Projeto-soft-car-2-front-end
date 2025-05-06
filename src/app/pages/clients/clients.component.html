@@ -6,12 +6,20 @@
       <div class="clients-title">
         <p>Clientes Cadastrados</p>
       </div>
+
       <div class="clients-cards">
         <app-clients-card
-          *ngFor="let client of clients"
+          *ngFor="let client of paginatedClients"
           [client]="client"
         ></app-clients-card>
+      </div>
+
+      <div class="pagination-controls">
+        <button (click)="prevPage()" [disabled]="isFirstPage()">Página anterior</button>
+        <span>Página {{ currentPage }} de {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="isLastPage()">Próxima página</button>
       </div>
     </div>
   </div>
 </div>
+

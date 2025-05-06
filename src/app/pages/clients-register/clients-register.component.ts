@@ -5,7 +5,7 @@ import { MenuBarComponent } from '../../components/menu-bar/menu-bar.component';
 import { MenuSideComponent } from '../../components/menu-side/menu-side.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-clients-register',

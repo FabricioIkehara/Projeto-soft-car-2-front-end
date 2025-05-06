@@ -1,35 +1,36 @@
 <div class="modal-container">
-    <div class="modal-title">
-      <h2><i class="fas fa-info-circle"></i> Detalhes do Pedido</h2>
-    </div>
-  
-    <div class="modal-data">
-      <h3>Informações do Cliente</h3>
-      <p><strong class="label">Cliente:</strong> {{ order.client }}</p>
-      <p><strong class="label">Telefone:</strong> {{ order.telefone }}</p>
-    </div>
-  
-    <div class="modal-total">
-      <h3>E-mail:</h3>
-      <p>{{ order.email }}</p>
-    </div>
-  
-    <div class="modal-total">
-      <h3>Status</h3>
-      <p>{{ order.status }}</p>
-    </div>
-  
-    <div class="modal-actions">
-      <button
-        *ngIf="order.status === 'Concluído' && !emailEnviado"
-        class="btn-confirm"
-        (click)="enviarEmailConfirmacao()"
-      >
-        Enviar Email de Confirmação
-      </button>
-      <p *ngIf="emailEnviado" class="text-success">Email de confirmação enviado com sucesso!</p>
-      <button class="btn-cancel" (click)="closeModal()">
-        Fechar
-      </button>
-    </div>
+  <div class="modal-title">
+    <h2><i class="fas fa-info-circle"></i> Detalhes do Pedido</h2>
   </div>
+
+  <div class="modal-data">
+    <h3>Informações do Cliente</h3>
+    <p><strong class="label">Cliente:</strong> {{ order.client }}</p>
+    <p><strong class="label">Telefone:</strong> {{ order.telefone }}</p>
+  </div>
+
+  <div class="modal-total">
+    <h3>E-mail:</h3>
+    <p>{{ order.email }}</p>
+  </div>
+
+  <div class="modal-total">
+    <h3>Status</h3>
+    <p>{{ order.status }}</p>
+  </div>
+
+  <div class="modal-actions">
+    <button
+      class="btn-confirm"
+      (click)="enviarEmail()"
+      [disabled]="enviando"
+    >
+      {{ enviando ? 'Enviando...' : 'Notificar Cliente' }}
+    </button>
+    <p *ngIf="emailEnviado" class="text-success">E-mail enviado com sucesso!</p>
+    <p *ngIf="erroEnvio" class="text-danger">{{ erroEnvio }}</p>
+    <button class="btn-cancel" (click)="closeModal()" [disabled]="enviando">
+      Fechar
+    </button>
+  </div>
+</div>
